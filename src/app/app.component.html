@@ -1,0 +1,23 @@
+<div class="main">
+  <div class="col-1">
+    <div class="row-1">
+      <input type="text" class="subject" [(ngModel)]="subject">
+      <input type="text" class="time" [(ngModel)]="time">
+      <button (click)="Save()">Save</button>
+    </div>
+    <div class="row-2">
+      <div class="tasks" *ngFor ="let task of tasks">
+        <div class="task">
+          <label>{{task.name}}</label>
+          <label *ngIf="task.workedTime">{{task.workedTime}} of</label>
+          <label>{{task.time}}</label>
+          <span>
+            <button class="edit">Edit</button>
+            <button class="delete">Delete</button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-2"></div>
+</div>
